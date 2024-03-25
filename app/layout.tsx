@@ -30,7 +30,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <nav className="ml-auto text-sm font-medium space-x-6">
                   <Link href="/">Home</Link>
                   <Link href="/about">About</Link>
-                </nav>
+                  {allPosts
+  .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()) // Sort posts by date in ascending order
+  .map((post) => (
+    <span key={post._id}>
+      <Link href={post.slug}>
+        {post.title}
+      </Link>
+    </span>
+  ))}                </nav>
               </div>
             </header>
             <main>{children}</main>
