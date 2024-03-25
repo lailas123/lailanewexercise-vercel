@@ -1,0 +1,26 @@
+---
+title: Question7
+description: A customer writes in to the Helpdesk asking "How do I do a redirect from the /blog path to https://example.com?" Please write a reply to the customer. Feel free to add any information about your decision making process after the reply.
+date: "2024-03-23"
+---
+reply to the customer's inquiry:
+Thank you for reaching out to our Helpdesk. I'd be happy to assist you with setting up a redirect from the "/blog" path to "https://example.com."
+
+To achieve this, you can typically implement a redirect using either server configuration directives or by utilizing client-side scripting. Here's a simple approach using server-side configuration:
+
+If you're using Apache HTTP Server, you can add the following directives to your .htaccess file or Apache configuration file:
+Redirect 301 /blog https://example.com
+If you're using NGINX, you can add the following directive to your NGINX configuration file:
+location /blog {
+    return 301 https://example.com;
+}
+
+These directives will instruct the server to issue a permanent redirect (HTTP 301) for any requests to the "/blog" path, directing users to "https://example.com" instead.
+
+Please ensure to replace "https://example.com" with the actual URL to which you want to redirect.
+
+Feel free to reach out if you need further assistance or have any additional questions.
+
+In crafting the response, I opted for a straightforward approach that provides the customer with clear instructions on how to implement the redirect using commonly used server configurations. I chose to include examples for both Apache and NGINX servers, as these are widely used in web hosting environments.
+
+Additionally, I emphasized the importance of replacing the placeholder URL ("https://example.com") with the customer's actual desired destination URL, ensuring they understand the need for customization.
